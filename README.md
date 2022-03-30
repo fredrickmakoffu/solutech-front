@@ -1,4 +1,6 @@
-# posta
+# Solutech Front end
+
+This is the front-end code built on Vuejs that, together with its backen code, makes up a small project for orders with vehicles.
 
 ## Project setup
 ```
