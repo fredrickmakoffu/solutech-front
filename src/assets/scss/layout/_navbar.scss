@@ -1,0 +1,191 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../helpers/breakpoints';
+
+.navbar {
+    @include media(">=tablet", "<laptop") {
+        display: block!important;
+
+        .container {
+            max-width: calc(100% - 20px);
+        }
+    }
+
+    @include media(">=Lphone", "<tablet") {
+        display: block!important;
+
+        .container {
+            max-width: calc(100% - 35px);
+        }
+    }
+
+    .divider {
+        display: none;
+
+        @include media("<=tablet") {
+            display: inherit;
+            height: 1px;
+            margin: 4px auto;
+            padding: 0;
+            width: 90%;
+            border: 1px solid $light-grey-color;
+        }
+    }
+
+    .navbar-left {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .navbar-brand {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 15px;
+        }
+
+
+        .account {
+            padding: 15px 10px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .account-text {
+            font-size: 12px;
+            color: $black-color;
+            margin-bottom: 0;
+            margin-left: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dropdown-menu {
+            img{ 
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+            .dropdown-title {
+                font-size: 10px;
+                font-weight: 700;
+                padding: 10px 20px;
+                line-height: 20px;
+                color: $darker-color;
+            }
+
+
+            .dropdown-divider {
+                height: 1px;
+                margin: 4px auto;
+                padding: 0;
+                width: 86%;
+                border: 1px solid $light-grey-color;
+            }
+
+            a.logout {
+                    &:hover {
+                        background-color: $danger-color!important;
+
+                        .dropdown-list {
+                            color: $light-grey-color;
+                        }
+
+                        .icon {
+                            color: $danger-color;
+                            background-color: $secondary-color;
+                        }
+                    }
+                }
+
+            a {
+                font-size: 13px;
+                color: #6c757d;
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                transition: all $transition_speed ease-in;
+                -webkit-transition: all $transition_speed ease-in;
+                -o-transition: all $transition_speed ease-in;
+
+                .icon {
+                    color: $white-color;
+                    background-color: $dark-color;
+                    font-weight: 700;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 4px;
+                    margin-right: 8px;
+                    vertical-align: -6px;
+                }
+
+                .dropdown-list {
+                    margin-bottom: 0;
+                    font-size: 13px;
+                    line-height: 1;
+                    color: $black-color;
+                }
+
+                &:hover {
+
+                    .dropdown-list {
+                        color: $light-grey-color;
+                        font-weight: 600;
+                    }
+
+                    .icon {
+                        color: $info-color;
+                        background-color: $secondary-color;
+                    }
+
+                    background-color: $burgundy-color;
+                }
+            }
+        }
+
+        .nav-icon {
+            margin-right: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
+    .navbar-brand.bars {
+        display: none!important;
+        margin-left: 20px;
+
+        @include media("<=tablet") {
+            display: block!important;
+        }
+
+        @include media(">=tablet", "<laptop") {
+            display: block!important;
+        }
+    }
+
+    .dropdown-menu.show {
+        display: block;
+        box-shadow: 0 2px 10px 0 rgb(0 0 0 / 5%);
+        border: none;
+        width: 200px;
+        margin-left: -10rem;
+        margin-top: 0rem;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .dropdown-toggle::after {
+        color: $dark-color  ;
+        font-size: 14px;
+    }
+}
+
+.navbar .dropdown-toggle::after {
+    color: $white-color;
+}

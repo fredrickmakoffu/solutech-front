@@ -1,0 +1,185 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../helpers/breakpoints';
+
+body{
+    font-family: $body-slab!important;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-slab!important;
+}
+
+#wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+	width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: $darker-color;
+    background-color: $white-color;
+    letter-spacing: 0;
+    
+    .body {
+        min-height: 605px;
+        padding-left: 280px;
+        width: 100%;
+        position: relative;
+
+        .backdrop {
+            display: none;
+        }
+        
+        .cog {
+            right: 0;
+            z-index: 7;
+        }
+        
+        .backdrop.on {
+            @include media("<=tablet") {
+                position: absolute;
+                z-index: 5;
+                display: block;
+                width: 100%;
+                height: 500%;
+                background: #000;
+                opacity: 0.4;
+            }
+
+            @include media(">=tablet", "<laptop") {
+                position: absolute;
+                z-index: 5;
+                display: block;
+                width: 100%;
+                height: 500%;
+                background: #000;
+                opacity: 0.4;
+            }
+        }
+
+        @include media("<=tablet") {
+            padding-left: 0;
+        }
+
+        @include media(">=Lphone", "<tablet") {
+            .container{
+                max-width: calc(100% - 20px);
+
+                .content {
+                    max-width: calc(100% - 40px);
+                }
+            }
+        }
+
+        @include media(">=tablet", "<laptop") {
+            padding-left: 0;
+
+            .container{
+                max-width: calc(100% - 20px);
+
+                .content {
+                    max-width: calc(100% - 60px);
+                }
+            }
+        }
+
+        @include media(">laptop", "<=Llaptop") {
+            .container{
+                max-width: calc(100% - 20px);
+
+                .content {
+                    max-width: calc(100% - 60px);
+                }
+            }
+        }
+
+        @include media(">Llaptop") {
+            .container{
+                max-width: calc(100% - 60px);
+
+                .content {
+                    max-width: calc(100% - 60px);
+                }
+            }
+        }
+    }
+}
+
+.text-muted {
+    color: $darker-color!important;
+    font-size: 13px;
+    letter-spacing: .2px;
+}
+
+.form-control {
+    border: 0;
+    border-bottom: 1px solid #eee;
+    padding-top: 0.8rem;
+    font-size: 16px!important;
+    padding-bottom: 0.8rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    background: #E8F0FE;
+    border-bottom-color: #86b7fe; 
+}
+
+.form-control:focus + .input-group-text {
+    color: #86b7fe!important; 
+    background-color: inherit;
+    border-bottom-color: #86b7fe; 
+    outline: 0;
+    background: #E8F0FE;
+}
+
+.burgundy-gradient-text {
+    background: linear-gradient(126.49deg, $burgundy-color 0%, $pink-color 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blue-gradient-text {
+    background: linear-gradient(126.49deg, $primary-color 0%, $dark-color 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.input-group-text {
+    border: 0;
+    background: transparent;
+    border-bottom: 1px #eee solid;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+    font-size: 16px;
+    letter-spacing: 0; 
+}
+// -------------------------------
+
+.slide-fade-enter-active {
+    transition: all .5s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateY(100%);
+    opacity: .8;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}

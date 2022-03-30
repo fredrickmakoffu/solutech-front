@@ -1,0 +1,41 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+
+
+.card {
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    
+    h1{
+        letter-spacing: 2px
+    }
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card-icon-title {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .4px;
+}
+
+.stats {
+    border-radius: 15px;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 15%);
+    transition: transform 0.55s ease,opacity 0.25s linear;
+    -webkit-transition: transform 0.55s ease,opacity 0.25s linear;
+    -o-transition: transform 0.55s ease,opacity 0.25s linear;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+canvas {
+    margin-top: 2rem;
+}       

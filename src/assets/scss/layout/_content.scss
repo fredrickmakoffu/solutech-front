@@ -1,0 +1,31 @@
+@import '../abstracts/variables';
+
+.content-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    .content {
+        width: 100%;
+        max-width: 760px;
+        height: -webkit-min-content;
+        height: -moz-min-content;
+        height: min-content;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 0 20px 80px;
+
+        .content-title {
+            color: $black-color;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+}

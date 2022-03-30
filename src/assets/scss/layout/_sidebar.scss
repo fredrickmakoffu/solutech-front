@@ -1,0 +1,254 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../helpers/breakpoints';
+
+#sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 280px;
+    background-color: $light-grey-color;
+    z-index: 880;
+    left: 0;
+    overflow: hidden;
+    outline: none;
+    -webkit-transition: all $transition_speed ease-in;
+    -moz-transition: all $transition_speed ease-in;
+    -o-transition: all $transition_speed ease-in;
+    transition: all $transition_speed ease-in;
+    
+    @include media("<=tablet") {
+        left: -280px;
+    }
+
+    @include media(">=tablet", "<laptop") {
+        left: -280px;
+    }
+
+    .brand {
+        padding-left: 12px;
+        a {
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #666666;
+        }
+
+        img {
+            width: 60px;
+        }
+
+        .abbreviation {
+            // background-color: $primary-color;
+            color: $white-color;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close {
+            display: inherit;
+            margin: 11px 20px auto auto;
+            color: $darker-color;
+            cursor: pointer;
+
+            @include media(">laptop") {
+                display: none;
+            }
+        }
+    }
+
+    .sidebar-heading {
+        padding: 0.875rem 1.25rem;
+    }
+
+    .list-group {
+        width: 95%;
+    }
+
+    .list-group-item {
+        display: block;
+        padding: 2px 0;
+        padding-left: 0px;
+        background-color: transparent;
+        position: relative;
+        border-width: 0;
+        cursor: pointer;
+
+        a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 20px;
+            width: 100%;
+            letter-spacing: .3px;
+            color: #6c757d;
+            text-decoration: none;
+            transition: all $transition_speed ease-out;
+            -webkit-transition: all $transition_speed ease-out;
+            -o-transition: all $transition_speed ease-out;
+
+            .icon {
+                width: 28px;
+                margin-right: 10px;
+                text-align: center;
+            }
+
+            span {
+                margin-top: 3px;
+                width: 100%;
+            }
+
+            &:hover {
+                background-color: $darker-color;
+                color: $secondary-color;
+                font-weight: 600;
+                border-bottom-right-radius: 5px;
+                border-top-right-radius: 5px;
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
+            }
+
+            &:before {
+                background-color: $light-grey-color;
+            }
+        }
+        
+        .list-nav-child {
+            visibility: hidden;
+            opacity: 0;
+            height: 0px;
+            width: 100%;
+            border-bottom-right-radius: 5px;
+        }
+
+        .expand-list-item {
+            background-color: $grey-color;
+            color: $secondary-color;
+            font-weight: 600;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 0px;
+            box-shadow: none;
+
+            &:hover {
+                box-shadow: none!important;
+                border-bottom-right-radius: 0px!important;
+                background: $grey-color;
+            }
+
+            & + .list-nav-child {
+                background: $grey-color;
+                padding-bottom: 8px;
+                padding-top: 5px;
+
+                .list-group-item {
+                    font-size: 13px;
+                    letter-spacing: 0.3px;
+
+                    a {
+                        background-color: transparent;
+                        color: #fff;
+                        padding-left: 30px;
+                        height: 35px;
+    
+                        &:hover {
+                            color: $white-color;
+                            box-shadow: none;
+                            font-weight: 700;
+                            letter-spacing: 0.5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .expand-active-list-item {
+            background-color: $grey-color;
+            color: $secondary-color!important;
+            font-weight: 600!important;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 0px;
+            box-shadow: none;
+
+            &:before {
+                background-color: $white-color!important;
+            }
+
+            &:hover {
+                background-color: $grey-color!important;
+                box-shadow: none!important;
+                border-bottom-right-radius: 0px!important;
+            }
+
+            & + .list-nav-child {
+                background: $grey-color;
+                padding-bottom: 8px;
+                padding-top: 5px;
+
+                .list-group-item {
+                    font-size: 13px;
+                    letter-spacing: 0.3px;
+ 
+                    a {
+                        background-color: transparent;
+                        color: #fff;
+                        padding-left: 30px;
+                        height: 35px;
+    
+                        &:hover {
+                            color: $white-color;
+                            box-shadow: none;
+                            font-weight: 700;
+                            letter-spacing: 0.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .list-group-item.active {  
+        &> a {
+            color: $danger-color;
+            font-weight: 600;
+
+            &:hover {
+                background-color: $danger-color;
+                color: $white-color;
+
+                &:before {
+                    background-color: $white-color;
+                }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 25px;
+                width: 4px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                background-color: $danger-color;
+            }
+        }
+    }
+
+    .list-group-item.item-active {  
+        &> a {
+            font-weight: 600;
+        }
+    }
+}
+
+.toggled {
+    @include media("<=tablet") {
+        transform: translateX(100%);
+    }
+}

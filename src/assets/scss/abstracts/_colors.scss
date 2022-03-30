@@ -1,0 +1,250 @@
+@import '../abstracts/variables';
+
+.primary {
+    background-color: $primary-color;
+    color: $white-color;
+    border: none;   
+
+    &:hover {
+        background-color: $primary-secondary-color;
+        color: $white-color;
+    }
+
+    &:active {
+        background-color: $primary-secondary-color;     
+        color: $white-color;
+    }
+
+    &:visited {
+        background-color: $primary-secondary-color;
+        color: $white-color;    
+    }
+}
+
+.bg-primary {
+    background-color: $primary-color!important;
+}
+
+.secondary {
+    background-color: $secondary-color;
+    color: $darker-color;
+    border: none;
+
+    &:hover {
+        background-color: $secondary-secondary-color;
+        color: $darker-color;
+    }
+
+    &:active {
+        background-color: $secondary-secondary-color;
+        color: $darker-color;
+    }
+
+    &:visited {
+        background-color: $secondary-secondary-color;
+        color: $darker-color;  
+    }
+}
+
+.bg-secondary {
+    background-color: $secondary-color!important;
+}
+
+.default {
+    background-color: $darker-color;
+    color: $secondary-color;
+    border: none;
+
+    &:hover {
+        background-color: $dark-color;
+        color: $white-color;
+    }
+
+    &:active {
+        background-color: $dark-color;
+        color: $white-color;
+    }
+
+    &:visited {
+        background-color: $dark-color;
+        color: $white-color;  
+    }
+}
+
+.bg-default {
+    background-color: $darker-color!important;
+}
+
+.info {
+    background-color: $info-color;
+    color: $white-color;
+    border: none;
+
+
+    &:hover {
+        background-color: $info-secondary-color;
+        color: $white-color;
+    }
+
+    &:active {
+        background-color: $info-secondary-color;
+        color: $white-color;
+    }
+
+    &:visited {
+        background-color: $info-secondary-color ;
+        color: $white-color;    
+    }
+}
+
+.bg-info {
+    background-color: $info-color!important;
+}
+
+.danger{
+    background-color: $danger-color;
+    color: $white-color;
+    border: none;
+
+
+    &:hover {
+        background-color: $danger-secondary-color;
+        color: $white-color;
+    }
+
+    &:active {
+        background-color: $danger-secondary-color;
+        color: $white-color;
+    }
+
+    &:visited {
+        background-color: $danger-secondary-color ;
+        color: $white-color;    
+    }
+}
+
+.bg-danger {
+    background-color: $danger-color!important;
+}
+
+.burgundy{
+    background-color: $burgundy-color;
+    color: $white-color;
+    border: none;
+
+    &:hover {
+        background-color: $burgundy-secondary-color;
+        color: $white-color;
+    }
+
+    &:active {
+        background-color: $burgundy-secondary-color;
+        color: $white-color;
+    }
+
+    &:visited {
+        background-color: $burgundy-secondary-color ;
+        color: $white-color;    
+    }
+}
+
+.bg-burgundy {
+    background-color: $burgundy-color!important;
+}
+
+.btn-burgundy {
+    background-color: $burgundy-color;
+    border-color: $burgundy-color;
+    color: $white-color;
+
+    &:hover {
+        background-color: $burgundy-secondary-color;
+        border-color: $burgundy-secondary-color;
+    }
+}
+
+.warning{
+    background-color: $warning-color;
+    color: $white-color;
+    border: none;
+
+
+    &:hover {
+        background-color: $warning-secondary-color;
+        color: $white-color;
+    }
+
+    &:active {
+        background-color: $warning-secondary-color;
+        color: $white-color;
+    }
+
+    &:visited {
+        background-color: $warning-secondary-color ;
+        color: $white-color;    
+    }
+}
+
+.bg-warning {
+    background-color: $warning-color!important;
+}
+
+.success {
+    background-color: $success-color;
+    color: $white-color;
+    border: none;
+
+
+    &:hover {
+        background-color: $success-secondary-color;
+        color: $white-color;
+    }
+
+    &:active {
+        background-color: $success-secondary-color;
+        color: $white-color;
+    }
+
+    &:visited {
+        background-color: $success-secondary-color ;
+        color: $white-color;    
+    }
+}
+
+.bg-success {
+    background-color: $success-color!important;
+}
+
+.grey {
+    background-color: $grey-color;
+    color: $dark-color;
+    border: none;
+
+
+    &:hover {
+        background-color: $dark-grey-color;
+        color: $dark-color;
+    }
+
+    &:active {
+        background-color: $dark-grey-color;
+        color: $dark-color;
+    }
+
+    &:visited {
+        background-color: $dark-grey-color ;
+        color: $dark-color;    
+    }
+}
+
+.bg-grey {
+    background-color: $grey-color!important;
+}
+
+.bg-dark-grey {
+    background-color: $dark-grey-color!important;
+}
+
+.text-burgundy {
+    color: $burgundy-color;
+}

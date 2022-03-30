@@ -1,0 +1,40 @@
+@import '../helpers/breakpoints.scss';
+
+.heading {
+    letter-spacing: 1px; 
+    font-size: .8rem;
+}
+
+.footer-background {
+    background: #1C2431;
+}
+
+.copyright-background {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.circle-icon {
+    text-align: center;
+    padding: .6rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.reach-out {
+    @include media("<laptop") {
+        text-align: left;
+    }
+
+    .col-lg-10 {
+        @include media("<=Lphone") {
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+}

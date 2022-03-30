@@ -1,0 +1,156 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../helpers/breakpoints';
+
+.card-icon {
+    display: block;
+    text-align: center;
+    margin: 2.4rem 0;
+
+    .icon {
+        font-size: 3rem;
+    }
+}
+
+.search {
+    border: 0;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color: #6c757d;
+        font-size: 13px;
+        letter-spacing: .3px;
+    }
+}
+
+.content-buttons {
+    margin-top: 45px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    transition: transform 0.55s ease, opacity 0.25s linear;
+}
+
+.button {
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.content-title {
+    color: $black-color;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.content-title-min {
+    color: $black-color;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#tables {
+
+    .table {
+        margin-top: 25px;
+    
+        thead th {
+            background: $darker-color;
+            color: #fafafa;
+            border-bottom: 0;
+    
+            &:first-child {
+                border-top-left-radius: 6px;
+                padding-left: 1.3rem !important;
+                padding-right: 0 !important;
+            }
+    
+            &:last-child {
+                border-top-right-radius: 6px;
+            }
+        }
+    
+        tbody {
+            th {
+                padding-left: 1.3rem!important;
+                padding-right: 0!important;
+            }
+        }
+    
+        &>:not(caption)>*>* {
+            padding: 1rem .5rem;
+        }
+    }
+
+    @include media("<=tablet") {
+        display: none;
+    }
+
+    @include media(">=tablet", "<laptop") {
+        display: none;
+    }
+}
+
+#cards {
+    display: none;
+
+    .card {
+        border-radius: 5px;
+        box-shadow: 0 1px 4px 0 rgb(0 0 0 / 15%);
+        transition: transform 0.55s ease, opacity 0.25s linear;
+        -webkit-transition: transform 0.55s ease, opacity 0.25s linear;
+        -o-transition: transform 0.55s ease, opacity 0.25s linear;
+    }
+
+    .card :before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100%;
+        width: 5px;
+        // background-color: #0dcaf0;
+        background-color: $info-color;
+    }
+
+    @include media("<=tablet") {
+        display: flex;
+    }
+
+    @include media(">=tablet", "<laptop") {
+        display: flex;
+    }
+}
+
+.form-control {
+    border: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    background: #E8F0FE;
+    border-bottom-color: #86b7fe; 
+}
+
+.form-control:focus + .input-group-text {
+    color: #86b7fe!important; 
+    background-color: inherit;
+    border-bottom-color: #86b7fe; 
+    outline: 0;
+    background: #E8F0FE;
+}
+
+.input-group-text {
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #eee;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+}

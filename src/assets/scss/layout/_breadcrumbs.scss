@@ -1,0 +1,13 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../helpers/breakpoints';
+
+.sidebar-border-right {
+    border-right: 1px solid #fafafa; 
+    box-shadow: 1px 1px 6px #eee;
+}
+
+.breadcrumbs-border-bottom {
+    border-bottom: 1px solid #fafafa!important;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 3%);
+}
