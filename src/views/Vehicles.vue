@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper" v-if="!loading">
       <sidebar :page="'Vehicles'"></sidebar>
       
       <div class="body">
@@ -81,9 +81,20 @@ export default {
     } 
   },  
   mounted() {
+    this.ifLoggedIn()
     this.getReports()
   },
   methods: {
+    ifLoggedIn() {
+      this.loading = true
+
+      if(localStorage.getItem('user')) {
+        this.loading = false
+      } else {
+        this.$router.push({name: 'Login'})
+        this.loading = false
+      }
+    },
     getReports() {
       this.axios.get('/api/vehicle-reports').then((response) => {
         this.reports = response.data.data

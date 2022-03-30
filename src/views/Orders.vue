@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper" v-if="!loading">
       <sidebar :page="'Orders'"></sidebar>
       
       <div class="body">
@@ -189,14 +189,25 @@ export default {
       orders: [],
       screen: 1,
       list_data: [],
-      loading: true,
+      loading: null,
       reports: []
     } 
   },
   mounted() {
+    this.ifLoggedIn()
     this.getDatabyPage()
   },
   methods: {
+    ifLoggedIn() {
+      this.loading = true
+
+      if(localStorage.getItem('user')) {
+        this.loading = false
+      } else {
+        this.$router.push({name: 'Login'})
+        this.loading = false
+      }
+    },    
     toModal(data) {
         this.$store.dispatch("getModalList", data)
         this.modalElem = new Modal(document.getElementById('assign-to-vehicle'))

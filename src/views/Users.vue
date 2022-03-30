@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper" v-if="!loading">
       <sidebar :page="'Users'"></sidebar>
       
       <div class="body">
@@ -61,8 +61,23 @@ export default {
       ],
       screen: 1,
       list_data: [],
-      loading: true,
+      loading: null,
     } 
-  },    
+  }, 
+  mounted() {
+      this.ifLoggedIn()
+  },
+  methods: {
+    ifLoggedIn() {
+      this.loading = true
+
+      if(localStorage.getItem('user')) {
+        this.loading = false
+      } else {
+        this.$router.push({name: 'Login'})
+        this.loading = false
+      }
+    },     
+  }
 }
 </script>
