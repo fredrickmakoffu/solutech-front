@@ -48,6 +48,8 @@
           </div>
         </footer>
       </div>
+
+      <vehicle-modal v-model:list_data=list_data></vehicle-modal>
   </div>
 </template>
 
@@ -59,20 +61,29 @@
 import Sidebar from '../components/Sidebar'
 import AdminHeader from '../components/Header'
 import AutoList from '../components/AutoList'
+import ifLoggedIn from '../mixins/ifLoggedIn'
+import VehicleModal from '../components/Modal/VehicleModal'
 
 export default {
   name: 'Orders',
+  mixins: [ifLoggedIn],
   components: {
     AdminHeader,
     Sidebar,
     AutoList,
+    VehicleModal
   },
   data() {
     return {
       url: 'api/vehicles',
-      title: {status: true, title: 'Your Data'},
+      title: {status: true, title: 'Your Data', actions: [
+        {name: 'Add Vehicle', type: 'modal', action_url: 'vehicle'}
+      ]},
       all_screens: [
-        {title: 'All Vehicles', screen: 1, url: 'api/vehicles'},
+        {title: 'All Vehicles', screen: 1, url: 'api/vehicles', actions: [
+          {name: 'Edit', type: 'modal', action_url: 'vehicle'},
+          {name: 'Delete', type: 'api', action_url: {type: 'delete', url:'api/vehicles/', message: {success: 'Success!', error: 'Error!'}}},
+        ]},
       ],
       screen: 1,
       list_data: [],

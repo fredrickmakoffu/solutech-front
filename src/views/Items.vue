@@ -40,9 +40,11 @@ import Sidebar from '../components/Sidebar'
 import AdminHeader from '../components/Header'
 import AutoList from '../components/AutoList'
 import ItemModal from '../components/Modal/ItemModal'
+import ifLoggedIn from '../mixins/ifLoggedIn'
 
 export default {
   name: 'Items',
+  mixins: [ifLoggedIn],
   components: {
     AdminHeader,
     Sidebar,

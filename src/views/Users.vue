@@ -39,10 +39,12 @@
 import Sidebar from '../components/Sidebar'
 import AdminHeader from '../components/Header'
 import AutoList from '../components/AutoList'
-import UserModal from '../components/Modal/UserModal';
+import UserModal from '../components/Modal/UserModal'
+import ifLoggedIn from '../mixins/ifLoggedIn'
 
 export default {
   name: 'Admin',
+  mixins: [ifLoggedIn],
   components: {
     AdminHeader,
     Sidebar,
@@ -63,21 +65,6 @@ export default {
       list_data: [],
       loading: null,
     } 
-  }, 
-  mounted() {
-      this.ifLoggedIn()
-  },
-  methods: {
-    ifLoggedIn() {
-      this.loading = true
-
-      if(localStorage.getItem('user')) {
-        this.loading = false
-      } else {
-        this.$router.push({name: 'Login'})
-        this.loading = false
-      }
-    },     
   }
 }
 </script>

@@ -18,7 +18,7 @@
                     <tr>
                         <th scope="col">#</th>
                         <th v-for="(header, index) in headers" :key="index" scope="col">
-                            <span class="text-capitalize">{{ header }}</span>
+                            <span class="text-capitalize">{{ header.split('_').join(' ') }}</span>
                         </th>
                         <th v-if="all_screens[screen-1].actions">Actions</th>
                     </tr>
@@ -27,7 +27,7 @@
                 <tbody>
                     <tr v-for="(item, index) in data" :key="index">
                         <th scope="row">{{ index + 1 }}</th>
-                        <td v-for="(header, index) in headers" :key="index">{{
+                        <td class="text-capitalize" v-for="(header, index) in headers" :key="index">{{
                             item[header] }}</td>
 
                         <td class="dropdown" v-if="all_screens[screen-1].actions">
@@ -57,7 +57,7 @@
             <div class="card mb-2 border-0">
                 <div class="card-body pb-0">
                     <p class="text-dark fw-bold">{{ index + 1 }}. </p>
-                    <p class="text-dark mb-3" v-for="(header, index) in headers" :key="index"> <span class="fw-bold text-uppercase">{{ header }}: </span> {{ item[header] }}</p>
+                    <p class="text-dark mb-3 text-capitalize" v-for="(header, index) in headers" :key="index"> <span class="fw-bold text-uppercase">{{ header.split('_').join(' ') }}: </span> {{ item[header] }}</p>
                 </div>
                 <div class="card-footer border-0 bg-white">
                     <span v-for="({name, action_url, type}, index) in all_screens[screen-1].actions" :key="index" >

@@ -159,9 +159,11 @@ import OrderModal from '../components/Modal/OrderModal'
 import AssignToVehicle from '../components/Modal/AssignToVehicle'
 import Status from '../components/Status'
 import {Modal} from 'bootstrap'
+import ifLoggedIn from '../mixins/ifLoggedIn'
 
 export default {
   name: 'Orders',
+  mixins: [ifLoggedIn],
   components: {
     AdminHeader,
     SectionTitle,
@@ -194,20 +196,9 @@ export default {
     } 
   },
   mounted() {
-    this.ifLoggedIn()
     this.getDatabyPage()
   },
-  methods: {
-    ifLoggedIn() {
-      this.loading = true
-
-      if(localStorage.getItem('user')) {
-        this.loading = false
-      } else {
-        this.$router.push({name: 'Login'})
-        this.loading = false
-      }
-    },    
+  methods: {  
     toModal(data) {
         this.$store.dispatch("getModalList", data)
         this.modalElem = new Modal(document.getElementById('assign-to-vehicle'))
